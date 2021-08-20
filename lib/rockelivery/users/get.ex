@@ -9,6 +9,8 @@ defmodule Rockelivery.Users.Get do
     end
   end
 
+  def all, do: Repo.all(User)
+
   defp get(id) do
     case Repo.get(User, id) do
       nil -> {:error, Error.build_user_not_found_error()}
